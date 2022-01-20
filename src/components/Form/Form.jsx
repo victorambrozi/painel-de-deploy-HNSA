@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComponent } from "../Button/button-style";
+import  Button  from "../Button/Button";
 import { StyleForm, StyleTitleForm } from "./form-style";
 
 //assets
@@ -51,7 +51,7 @@ const Form = (props) => {
           <span>Senha ou nome de usuário incorretos</span>
         </div>
 
-        <ButtonComponent title="Login" />
+        <Button text="Login" />
 
         <div className="forget-password">
           <p>
