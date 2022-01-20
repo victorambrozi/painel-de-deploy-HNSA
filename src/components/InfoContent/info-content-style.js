@@ -12,7 +12,7 @@ const StyleInfoComponent = styled.div`
 
     .logo {
         max-width: 34.5rem;
-        margin: 8.6rem 0 3.7rem 0;
+        margin: 8.6rem 0 7.8rem 0;
         padding: 3.5rem 5rem;
 
         background: #FFF;
@@ -31,14 +31,14 @@ const StyleInfoComponent = styled.div`
         margin-left: 12rem;
         
         h2 {
-            font-size: clamp(3vw, 3rem, 5vw);
+            font-size: clamp(2.7vw, 3rem, 5vw);
             font-weight: 700;
 
         }
 
         p {
             margin-top: 1rem;
-            font-size: clamp(1.75vw, 2rem, 5vw);
+            font-size: clamp(1.8vw, 2rem, 5vw);
             font-weight: 300;
         }
     }
