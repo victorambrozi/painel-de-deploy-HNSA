@@ -8,7 +8,9 @@ const Login = () => {
     <>
       <LoginComponent>
         <InfoContent />
-        <Form />
+        <div className="form">
+          <Form />
+        </div>
       </LoginComponent>
     </>
   );
