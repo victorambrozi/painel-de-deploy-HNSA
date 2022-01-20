@@ -5,10 +5,11 @@ const LoginComponent = styled.div`
   height: 100vh;
 
   display: flex;
+  align-items: center;
 
   .form {
+    padding : 3rem;
     margin: 0 auto;
-    align-self: center;
   }
 `;
 

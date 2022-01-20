@@ -4,6 +4,7 @@ import bgInfoContent from "../../assets/bg-info-content.svg"
 const StyleInfoComponent = styled.div`
     width: 60vw;
     height: 100vh;
+    padding: 0 2rem 0 0;
 
     background-image: url(${bgInfoContent});
     background-size: cover;
@@ -13,7 +14,7 @@ const StyleInfoComponent = styled.div`
     .logo {
         max-width: 34.5rem;
         margin: 8.6rem 0 7.8rem 0;
-        padding: 3.5rem 5rem;
+        padding: 2.5rem 3rem;
 
         background: #FFF;
         

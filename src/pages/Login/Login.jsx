@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <>
       <LoginComponent>
-        <InfoContent />
+          <InfoContent />
         <div className="form">
           <Form />
         </div>

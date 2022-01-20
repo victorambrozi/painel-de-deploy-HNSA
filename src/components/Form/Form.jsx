@@ -2,6 +2,9 @@ import React from "react";
 import { ButtonComponent } from "../Button/button-style";
 import { StyleForm, StyleTitleForm } from "./form-style";
 
+//assets
+import iconError from "../../assets/icons/error.svg";
+
 const Form = (props) => {
   const [form, setForm] = React.useState({
     name: "",
@@ -17,7 +20,7 @@ const Form = (props) => {
       <StyleTitleForm>Login</StyleTitleForm>
 
       <StyleForm onSubmit={handleSubmit}>
-        <label htmlFor="name" className="input-name">
+        <label htmlFor="name" className="label-name">
           Nome do usuário
         </label>
         <input
@@ -25,20 +28,35 @@ const Form = (props) => {
           id="name"
           value={form.name}
           onChange={(event) => setForm(event.target.value)}
-          placeholder="nome"
+          className="bg-icon"
         />
-        <label htmlFor="password" className="input-name">
+        <label htmlFor="password" className="label-name">
           Senha
         </label>
-        <input type="password" name="password" id="password" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          className="bg-icon"
+        />
 
-        {/* adicionar campo para senha incorreta aqui */}
-        <input type="checkbox" name="data-remember" id="data-remember" />
+        <label className="data-remember" htmlFor="data-remember">
+          <input type="checkbox" name="data-remember" id="data-remember" />
+          <span></span>
+          Lembrar meus dados
+        </label>
 
-       <ButtonComponent title="Login" />
+        <div className="login-error">
+          <img src={iconError} alt="Error" />
+          <span>Senha ou nome de usuário incorretos</span>
+        </div>
+
+        <ButtonComponent title="Login" />
       </StyleForm>
 
-      <p>Esqueceu a senha? <a href="/">Esqueci minha senha</a></p>
+      <p>
+        Esqueceu a senha? <a href="/">Esqueci minha senha</a>
+      </p>
     </>
   );
 };
