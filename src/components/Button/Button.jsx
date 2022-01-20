@@ -1,8 +1,8 @@
-import React from 'react';
-import { ButtonComponent } from './button-style';
+import React from "react";
+import { ButtonComponent } from "./button-style";
 
-const Button = (props) => {
-  return <ButtonComponent>{props.title}</ButtonComponent>;
+const Button = ({ title }) => {
+  return <ButtonComponent>{title}</ButtonComponent>;
 };
 
 export default Button;

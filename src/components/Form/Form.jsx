@@ -52,11 +52,13 @@ const Form = (props) => {
         </div>
 
         <ButtonComponent title="Login" />
-      </StyleForm>
 
-      <p>
-        Esqueceu a senha? <a href="/">Esqueci minha senha</a>
-      </p>
+        <div className="forget-password">
+          <p>
+            Esqueceu a senha? <a href="/">Esqueci minha senha</a>
+          </p>
+        </div>
+      </StyleForm>
     </>
   );
 };

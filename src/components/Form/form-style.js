@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 // assets
-import iconName from "../../assets/icons/input-name.svg"
-import iconPassword from "../../assets/icons/password.svg"
+import iconName from "../../assets/icons/input-name.svg";
+import iconPassword from "../../assets/icons/password.svg";
 
 const StyleTitleForm = styled.h2`
   font-size: 2rem;
@@ -117,6 +117,19 @@ const StyleForm = styled.form`
       color: #6E2723;
     }
 
+  }
+
+  .forget-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      font-size: 1.2rem;
+      > a {
+        font-size: 1.2rem;
+        color: #3454CF;
+      }
+  }
   }
 `;
 
