@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PainelDeDeploys = () => {
-  return <div></div>;
+  return <div>PainelDeDeploys</div>;
 };
 
 export default PainelDeDeploys;
