@@ -17,6 +17,17 @@ const GlobalStyle = createGlobalStyle`
 
   html, body, #root {
     height: 100%;
+
+    position: relative;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
   }
 `;
 

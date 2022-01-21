@@ -1,14 +1,18 @@
 import React from "react";
 import Upload from "../../components/Upload/Upload";
-import Deploys from "../../components/Deploys/Deploys"
+import Deploys from "../../components/Deploys/Deploys";
 import { StylePainel } from "./painelDeDeploy-style.js";
+import Header from "../../components/Header/Header";
 
 const PainelDeDeploys = () => {
   return (
-    <StylePainel>
-      <Deploys />
-      <Upload />
-    </StylePainel>
+    <>
+      <Header />
+      <StylePainel>
+        <Deploys />
+        <Upload />
+      </StylePainel>
+    </>
   );
 };
 
