@@ -1,5 +1,5 @@
-import Login from "./pages/Login/Login";
 import { GlobalStyle } from "./styles/GlobalStyle.js";
+import Login from "./pages/Login/Login";
 import PainelDeDeploys from "./pages/PainelDeDeploys/PainelDeDeploys"
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <>
       <GlobalStyle />
       <PainelDeDeploys />
+      {/* <Login /> */}
     </>
   );
 }
