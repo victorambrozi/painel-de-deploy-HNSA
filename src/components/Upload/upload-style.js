@@ -1,17 +1,29 @@
 import styled from "styled-components";
 
-import bgDashboard from "../../assets/bg-dashboard.svg"
 
 const StyleUpload = styled.div`
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-image: url(${bgDashboard});
-  background-size: cover;
-  background-position: center;
+  margin-top: 6rem;
 `;
 
-export { StyleUpload };
+const DropContainer = styled.div`
+    padding: 2rem;
+    border: 1px dashed rgba(0, 0, 0, 0.4);
+    border-radius: 1.5rem;
+
+    font-size: 50px;
+
+    cursor: pointer;
+    transition: height 0.2s ease;
+`;
+
+const UploadMessage = styled.div`
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-size: 50px;
+`;
+
+export { StyleUpload, DropContainer, UploadMessage };

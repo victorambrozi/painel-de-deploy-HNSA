@@ -27,10 +27,10 @@ const StyleForm = styled.form`
     margin-top: 0.5rem;
     padding: 1.5rem;
     width: 37rem;
-    
+
     border: 1px solid rgba(78, 78, 78, 0.25);
     border-radius: 1rem;
-    
+
     font-size: 1.4rem;
     color: rgba(78, 78, 78, 0.6);
     outline: none;
@@ -38,7 +38,7 @@ const StyleForm = styled.form`
 
   .bg-icon {
     padding-left: 3.5rem;
-    display: flex:
+    display: flex;
     align-items: center;
 
     background-repeat: no-repeat;
@@ -46,15 +46,15 @@ const StyleForm = styled.form`
   }
 
   > input#name {
-    background-image: url(${iconName})
+    background-image: url(${iconName});
   }
 
   > input#password {
-    background-image: url(${iconPassword})
+    background-image: url(${iconPassword});
   }
 
   > input + label {
-      margin-top: 2rem;
+    margin-top: 2rem;
   }
 
   .data-remember {
@@ -65,10 +65,10 @@ const StyleForm = styled.form`
 
     font-weight: 500;
     font-size: 1rem;
-    color: #7B7B7B;
+    color: #7b7b7b;
 
     position: relative;
-    
+
     > input {
       margin-right: 1rem;
       width: 0;
@@ -77,7 +77,7 @@ const StyleForm = styled.form`
       opacity: 0;
 
       &:checked ~ span {
-        background: #3454CF;
+        background: #3454cf;
       }
     }
 
@@ -89,34 +89,32 @@ const StyleForm = styled.form`
       width: 1rem;
       height: 1rem;
 
-      border: 2px solid #3454CF;
-      border-radius: .2rem;
+      border: 2px solid #3454cf;
+      border-radius: 0.2rem;
     }
-
   }
 
   .login-error {
     margin: 2rem 0;
-    padding: .8rem 2rem;
+    padding: 0.8rem 2rem;
 
-    border: 1px solid #E0B1AE;
+    border: 1px solid #e0b1ae;
     border-radius: 1rem;
 
     display: flex;
     align-items: center;
 
-    background: #FFE0DE;
+    background: #ffe0de;
 
     // display: none; // acionar com JS
 
     > span {
       margin-left: 2rem;
-      
+
       font-size: 1.2rem;
       font-weight: 500;
-      color: #6E2723;
+      color: #6e2723;
     }
-
   }
 
   .forget-password {
@@ -127,9 +125,9 @@ const StyleForm = styled.form`
       font-size: 1.2rem;
       > a {
         font-size: 1.2rem;
-        color: #3454CF;
+        color: #3454cf;
       }
-  }
+    }
   }
 `;
 

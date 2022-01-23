@@ -7,7 +7,8 @@ const StylePainel = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-direction: column;
+  
   background-image: url(${bgDashboard});
   background-size: cover;
   background-repeat: no-repeat;
