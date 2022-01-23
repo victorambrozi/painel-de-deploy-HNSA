@@ -35,7 +35,7 @@ const Upload = () => {
   };
   return (
     <StyleUpload>
-      {/* https://www.youtube.com/watch?v=G5UZmvkLWSQ */}
+      {/* https://www.youtube.com/watch?v=G5UZmvkLWSQ  28:12min*/}
       {/* Modificar arquivos aceitos  */}
       <Dropzone accept="file/*" onDropAccepted={() => {}}>
         {({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
