@@ -1,6 +1,6 @@
 import React from "react";
 import Upload from "../../components/Upload/Upload";
-import Deploys from "../../components/Deploys/Deploys";
+import InfoDeploys from "../../components/InfoDeploys/InfoDeploys";
 import { StylePainel } from "./painelDeDeploy-style.js";
 import Header from "../../components/Header/Header";
 
@@ -9,7 +9,7 @@ const PainelDeDeploys = () => {
     <>
       <Header />
       <StylePainel>
-        <Deploys />
+        <InfoDeploys />
         <Upload />
       </StylePainel>
     </>

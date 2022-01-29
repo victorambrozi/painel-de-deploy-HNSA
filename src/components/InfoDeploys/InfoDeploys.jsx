@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleDeploysData } from "./deploys-style";
+import { StyleDeploysData } from "./info-deploys-style";
 
 //assets
 import iconDeploys from "../../assets/icons/total-deploys.svg";
 import iconHourDeploy from "../../assets/icons/hour-deploy.svg";
 import iconDataDeploy from "../../assets/icons/data-deploy.svg";
-const Deploys = () => {
+const InfoDeploys = () => {
   return (
     <StyleDeploysData>
       <div className="card-deploy">
@@ -36,4 +36,4 @@ const Deploys = () => {
   );
 };
 
-export default Deploys;
+export default InfoDeploys;
