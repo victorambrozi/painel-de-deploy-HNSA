@@ -49,8 +49,8 @@ const FileInfo = styled.div`
 `;
 
 const Preview = styled.div`
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 3.8rem;
+  height: 5.6rem;
 
   margin-right: 1rem;
   border-radius: 0.5rem;
@@ -60,5 +60,7 @@ const Preview = styled.div`
   background-size: cover;
   background-position: 50% 50%;
 `;
+
+
 
 export { StyleContainerFileList, FileInfo, Preview };
