@@ -6,30 +6,32 @@ import { MdCheckCircle, MdError } from "react-icons/md";
 
 // assets
 import logo from "../../assets/logo.svg";
-const FileList = ({ files }) => {
+const FileList = ({ files }) => { // files === acceptedFiles
+
   return (
     <StyleContainerFileList>
-      {files?.map((file) => {
-        return (
-          <li key={file.path}>
-            <FileInfo>
-              <Preview src={logo} />
+      {files !== undefined &&
+        files?.map((file) => {
+          return (
+            <li key={file.path}>
+              <FileInfo>
+                <Preview src={logo} />
+
+                <div>
+                  <strong>{file.path}</strong>
+                  <span>
+                    {file.size} <button onClick={() => {}}>Excluir</button>
+                  </span>
+                </div>
+              </FileInfo>
 
               <div>
-                <strong>{file.path}</strong>
-                <span>
-                  {file.size} <button onClick={() => {}}>Excluir</button>{" "}
-                </span>
+                <MdCheckCircle size={24} color="#78e5d5" />
+                <MdError size={24} color="#e57878" />
               </div>
-            </FileInfo>
-
-            <div>
-              <MdCheckCircle size={24} color="#78e5d5" />
-              <MdError size={24} color="#e57878" />
-            </div>
-          </li>
-        );
-      })}
+            </li>
+          );
+        })}
     </StyleContainerFileList>
   );
 };

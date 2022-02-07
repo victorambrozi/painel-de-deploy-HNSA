@@ -8,33 +8,65 @@ import FileList from "../FileList/FileList";
 import arrowUpload from "../../assets/icons/arrow-upload.svg";
 
 const DragAndDrop = () => {
-  const { acceptedFiles, getRootProps, getInputProps, isDragAccept } =
-    useDropzone();
+  const {
+    acceptedFiles,
+    getRootProps,
+    getInputProps,
+    isDragAccept,
+    isDragReject,
+  } = useDropzone({
+    accept: "image/png, image/jpeg",
+  });
 
-  const renderUploadMessage = (isDragAccept) => {
-    if (!isDragAccept) {
+  React.useEffect(() => {
+    // adicionar no LocalStorage
+    // setUploadedFiles(...acceptedFiles);
+  }, []);
+
+  console.log(acceptedFiles);
+  const renderUploadMessage = (isDragAccept, isDragReject) => {
+    console.log(`accept: ${isDragAccept} / `, `reject: ${isDragReject}`);
+
+    if (isDragAccept) {
+      return (
+        <UploadMessage>
+          <img src={arrowUpload} alt="File Upload" />
+          <p>Solte o arquivo aqui.</p>
+        </UploadMessage>
+      );
+    }
+
+    if (isDragReject) {
       return (
         <UploadMessage>
           <img src={arrowUpload} alt="File Upload" />
 
-          <p>
-            Arraste e solte o arquivo <span>aqui</span>.
-          </p>
-
-          <span>Arquivos suportados: PDF, PDF, PDF</span>
+          <p>Arquivo não suportado.</p>
         </UploadMessage>
       );
     }
+
+    return (
+      <UploadMessage>
+        <img src={arrowUpload} alt="File Upload" />
+
+        <p>
+          Arraste e solte o arquivo <span>aqui</span>.
+        </p>
+
+        <span>Arquivos suportados: PDF, PDF, PDF</span>
+      </UploadMessage>
+    );
   };
   return (
     <>
       <Container>
-        <div {...getRootProps({ className: "dropzone" })}>
+        <div {...getRootProps()}>
           <input {...getInputProps()} />
-          <div>{renderUploadMessage(isDragAccept)}</div>
+          <div>{renderUploadMessage(isDragAccept, isDragReject)}</div>
         </div>
       </Container>
-      {!acceptedFiles.length !== 0 && <FileList files={acceptedFiles} />}
+      {acceptedFiles.length && <FileList files={acceptedFiles} />}
     </>
   );
 };
