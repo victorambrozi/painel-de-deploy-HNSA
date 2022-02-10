@@ -11,8 +11,6 @@ const Container = styled.div`
 `;
 
 const StyleLogo = styled.div`
-  margin-bottom: 15.7rem;
-
   display: flex;
   align-items: center;
 
@@ -29,7 +27,7 @@ const StyleLogo = styled.div`
 `;
 
 const StyleTitleForm = styled.h2`
-  margin-bottom: 4rem;
+  margin: 15.7rem 0 4rem 0;
   font-size: 2rem;
   font-weight: 700;
 `;
