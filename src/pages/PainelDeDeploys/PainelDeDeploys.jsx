@@ -1,9 +1,12 @@
 import React from "react";
-import Upload from "../../components/Upload/Upload";
+// components
 import InfoDeploys from "../../components/InfoDeploys/InfoDeploys";
-import { StylePainel, Container } from "./painelDeDeploy-style.js";
 import Header from "../../components/Header/Header";
 import FileList from "../../components/FileList/FileList";
+import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
+
+// assets
+import { StylePainel, Container } from "./painelDeDeploy-style.js";
 
 const PainelDeDeploys = () => {
   return (
@@ -11,7 +14,7 @@ const PainelDeDeploys = () => {
         <Header />
         <StylePainel>
           <InfoDeploys />
-          <Upload />
+          <DragAndDrop />
           <FileList />
         </StylePainel>
       </Container>

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StylePainel = styled.div`
-  height: 100%;
   width: 100%;
   max-width: 70rem;
 

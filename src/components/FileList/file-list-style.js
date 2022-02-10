@@ -4,11 +4,11 @@ const StyleContainerFileList = styled.ul`
   width: 100%;
 
   li {
-    margin: 2rem 2rem 0 2rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: "#4e4e4e";
+    color: #4e4e4e;
 
     & + li {
       margin-top: 1.5rem;
@@ -60,7 +60,5 @@ const Preview = styled.div`
   background-size: cover;
   background-position: 50% 50%;
 `;
-
-
 
 export { StyleContainerFileList, FileInfo, Preview };
