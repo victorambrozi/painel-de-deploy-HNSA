@@ -4,14 +4,38 @@ import styled from "styled-components";
 import iconName from "../../assets/icons/input-name.svg";
 import iconPassword from "../../assets/icons/password.svg";
 
+const Container = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 41rem;
+`;
+
+const StyleLogo = styled.div`
+  margin-bottom: 15.7rem;
+
+  display: flex;
+  align-items: center;
+
+  h2 {
+    width: 100%;
+    max-width: 15rem;
+
+    margin-left: 3rem;
+
+    font-size: 2rem;
+    color: #0f0f0f;
+    text-transform: uppercase;
+  }
+`;
+
 const StyleTitleForm = styled.h2`
+  margin-bottom: 4rem;
   font-size: 2rem;
   font-weight: 700;
 `;
 
 const StyleForm = styled.form`
-  margin-top: 4rem;
-  max-width: 41rem;
+  width: 100%;
 
   display: flex;
   justify-content: center;
@@ -26,7 +50,7 @@ const StyleForm = styled.form`
   > input {
     margin-top: 0.5rem;
     padding: 1.5rem;
-    width: 37rem;
+    width: 100%;
 
     border: 1px solid rgba(78, 78, 78, 0.25);
     border-radius: 1rem;
@@ -106,7 +130,7 @@ const StyleForm = styled.form`
 
     background: #ffe0de;
 
-    // display: none; // acionar com JS
+    display: none; // acionar com JS
 
     > span {
       margin-left: 2rem;
@@ -118,6 +142,7 @@ const StyleForm = styled.form`
   }
 
   .forget-password {
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,4 +156,4 @@ const StyleForm = styled.form`
   }
 `;
 
-export { StyleForm, StyleTitleForm };
+export { StyleForm, StyleTitleForm, StyleLogo, Container };

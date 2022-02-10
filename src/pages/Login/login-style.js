@@ -6,10 +6,10 @@ const LoginComponent = styled.div`
 
   display: flex;
   align-items: center;
-
+  
   .form {
-    padding : 3rem;
-    margin: 0 auto;
+    width: 60vw;
+    padding : 0 3rem;
   }
 `;
 
