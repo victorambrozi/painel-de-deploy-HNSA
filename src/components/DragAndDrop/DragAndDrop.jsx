@@ -6,8 +6,11 @@ import { useDropzone } from "react-dropzone";
 import FileList from "../FileList/FileList";
 
 import arrowUpload from "../../assets/icons/arrow-upload.svg";
+import Loading from "../Loading/Loading";
 
 const DragAndDrop = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
+
   const {
     acceptedFiles,
     getRootProps,
@@ -66,6 +69,7 @@ const DragAndDrop = () => {
           <div>{renderUploadMessage(isDragAccept, isDragReject)}</div>
         </div>
       </Container>
+      <Loading loading={isLoading} />
       {acceptedFiles.length && <FileList files={acceptedFiles} />}
     </>
   );
