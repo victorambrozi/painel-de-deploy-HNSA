@@ -35,13 +35,12 @@ const StyleDeploysData = styled.div`
         justify-content: flex-start;
       }
     }
-  }
-
-  img + span {
-    margin-left: 1rem;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #4e4e4e;
+    span {
+      margin-left: 1rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #4e4e4e;
+    }
   }
 `;
 

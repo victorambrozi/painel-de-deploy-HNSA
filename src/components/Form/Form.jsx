@@ -1,9 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import { StyleForm, StyleTitleForm, StyleLogo, Container } from "./form-style";
-
-//assets
-import iconError from "../../assets/icons/error.svg";
+import { MdOutlineErrorOutline } from "react-icons/md";
 
 import logo from "../../assets/logo.svg";
 
@@ -56,7 +54,7 @@ const Form = (props) => {
           </label>
 
           <div className="login-error">
-            <img src={iconError} alt="Error" />
+            <MdOutlineErrorOutline size={15} color="#BB7772" />
             <span>Senha ou nome de usuário incorretos</span>
           </div>
 

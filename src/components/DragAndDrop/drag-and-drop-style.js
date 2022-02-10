@@ -27,13 +27,7 @@ const UploadMessage = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  img {
-    max-width: 100%;
-    display: block;
-  }
-
   p {
-    margin-top: 3rem;
     font-size: 3rem;
     font-weight: 600;
     color: #7b7b7b;

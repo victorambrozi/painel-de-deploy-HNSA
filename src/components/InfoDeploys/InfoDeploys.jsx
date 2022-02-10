@@ -1,10 +1,8 @@
 import React from "react";
 import { StyleDeploysData } from "./info-deploys-style";
 
-//assets
-import iconDeploys from "../../assets/icons/total-deploys.svg";
-import iconHourDeploy from "../../assets/icons/hour-deploy.svg";
-import iconDataDeploy from "../../assets/icons/data-deploy.svg";
+import { MdAccessTime, MdOutlineCalendarToday, MdOutlineCloudUpload } from "react-icons/md";
+
 const InfoDeploys = () => {
   return (
     <StyleDeploysData>
@@ -12,7 +10,7 @@ const InfoDeploys = () => {
         <h2 className="card-deploy__title">Total de Deploys</h2>
 
         <div className="total-content">
-          <img src={iconDeploys} alt="Icon Upload" />
+        <MdOutlineCloudUpload size={30} color="#4E4E4E" />
           <span>700</span>
         </div>
       </div>
@@ -22,12 +20,12 @@ const InfoDeploys = () => {
 
         <div className="last-content">
           <div className="last-content__hour">
-            <img src={iconHourDeploy} alt="Icon Hour" />
+            <MdAccessTime size={25} color="#4E4E4E" />
             <span>18:00</span>
           </div>
 
           <div className="last-content__data">
-            <img src={iconDataDeploy} alt="Icon Data" />
+            <MdOutlineCalendarToday size={25} color="#4E4E4E" />
             <span>19/01</span>
           </div>
         </div>

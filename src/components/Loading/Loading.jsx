@@ -1,8 +1,5 @@
 import React from "react";
-
-// assets
-import play from "../../assets/icons/play.svg";
-import pause from "../../assets/icons/pause.svg";
+import { MdPauseCircleOutline, MdPlayCircleOutline } from "react-icons/md";
 
 // style
 import { Container } from "./loading-style";
@@ -27,9 +24,9 @@ const Loading = ({ loading }) => {
         <progress className="progress" value="70" max="100"></progress>
         <button onClick={() => setIsLoading(!isLoading)}>
           {isLoading ? (
-            <img src={pause} alt="Icon pause" />
+            <MdPauseCircleOutline size={50} color="#4E4E4E" />
           ) : (
-            <img src={play} alt="Icon play" />
+            <MdPlayCircleOutline size={50} color="#4E4E4E" />
           )}
         </button>
       </div>

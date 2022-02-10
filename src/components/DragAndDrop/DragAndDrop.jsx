@@ -5,7 +5,7 @@ import { Container, UploadMessage } from "./drag-and-drop-style";
 import { useDropzone } from "react-dropzone";
 import FileList from "../FileList/FileList";
 
-import arrowUpload from "../../assets/icons/arrow-upload.svg";
+import { MdOutlineFileUpload } from "react-icons/md";
 import Loading from "../Loading/Loading";
 
 const DragAndDrop = () => {
@@ -33,7 +33,7 @@ const DragAndDrop = () => {
     if (isDragAccept) {
       return (
         <UploadMessage>
-          <img src={arrowUpload} alt="File Upload" />
+          <MdOutlineFileUpload size={76} color="#3454CF" />
           <p>Solte o arquivo aqui.</p>
         </UploadMessage>
       );
@@ -42,7 +42,7 @@ const DragAndDrop = () => {
     if (isDragReject) {
       return (
         <UploadMessage>
-          <img src={arrowUpload} alt="File Upload" />
+          <MdOutlineFileUpload size={76} color="#3454CF" />
 
           <p>Arquivo não suportado.</p>
         </UploadMessage>
@@ -51,7 +51,7 @@ const DragAndDrop = () => {
 
     return (
       <UploadMessage>
-        <img src={arrowUpload} alt="File Upload" />
+        <MdOutlineFileUpload size={76} color="#3454CF" />
 
         <p>
           Arraste e solte o arquivo <span>aqui</span>.
