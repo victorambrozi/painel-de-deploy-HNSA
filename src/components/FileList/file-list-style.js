@@ -4,7 +4,7 @@ const StyleContainerFileList = styled.ul`
   width: 100%;
 
   li {
-    margin-top: 2rem;
+    padding: 2rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

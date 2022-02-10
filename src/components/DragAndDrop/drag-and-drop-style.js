@@ -13,8 +13,6 @@ const Container = styled.div`
   border: 1px dashed rgba(0, 0, 0, 0.4);
   border-radius: 1.5rem;
 
-  font-size: 50px;
-
   > input {
     width: 100%;
     height: 100%;
