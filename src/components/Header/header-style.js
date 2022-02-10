@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 const StyleHeader = styled.header`
-  padding: 2rem;
-  font-size: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+  background: #f5f5f5;
+  box-shadow: 0px 2px 10px -4px rgba(0, 0, 0, 0.25);
+
+  padding: 2rem 12rem;
+  font-size: 50px;
 
   .nav {
     ul {
@@ -23,16 +26,16 @@ const StyleHeader = styled.header`
         }
 
         &:last-child {
-          background: #3454CF;
-          border-radius: .5rem;
-          transition: .4s;
+          background: #3454cf;
+          border-radius: 0.5rem;
+          transition: 0.4s;
 
           &:hover {
-              filter: brightness(1.2);
+            filter: brightness(1.2);
           }
 
           > a {
-              color: #FFF;
+            color: #fff;
           }
         }
       }
@@ -40,4 +43,26 @@ const StyleHeader = styled.header`
   }
 `;
 
-export { StyleHeader };
+const StyleLogo = styled.div`
+  a {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 4rem;
+      height: 6rem;
+    }
+
+    h2 {
+      width: 100%;
+      max-width: 11rem;
+
+      margin-left: 2rem;
+      text-transform: uppercase;
+
+      color: #0f0f0f;
+    }
+  }
+`;
+
+export { StyleHeader, StyleLogo };

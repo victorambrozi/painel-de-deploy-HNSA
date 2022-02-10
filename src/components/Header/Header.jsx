@@ -1,11 +1,19 @@
 import React from "react";
-import { StyleHeader } from "./header-style";
+import { StyleHeader, StyleLogo } from "./header-style";
+import logo from "../../assets/logo.svg";
 
 const Header = () => {
-  const navigation = ["FAQ", "Contato", "Logout"];
+  const navigation = ["Contato", "Logout"];
 
   return (
     <StyleHeader>
+      <StyleLogo>
+        <a href="/">
+          <img src={logo} alt="Brasão da OM" />
+
+          <h2>Hospital Naval de Salvador</h2>
+        </a>
+      </StyleLogo>
       <nav className="nav">
         <ul>
           {navigation.map((element) => (
