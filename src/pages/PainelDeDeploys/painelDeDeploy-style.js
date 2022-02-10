@@ -5,7 +5,7 @@ const StylePainel = styled.div`
   width: 100%;
   max-width: 70rem;
 
-  margin: 0 auto;
+  margin: 13.2rem auto 0 auto;
 
   display: flex;
   justify-content: center;
@@ -13,4 +13,8 @@ const StylePainel = styled.div`
   flex-direction: column;
 `;
 
-export { StylePainel };
+const Container = styled.div`
+
+`;
+
+export { StylePainel, Container };

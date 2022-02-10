@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      {/* <PainelDeDeploys /> */}
-      <Login />
+      <PainelDeDeploys />
+      {/* <Login /> */}
     </>
   );
 }
