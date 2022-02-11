@@ -1,11 +1,14 @@
 import React from "react";
-import { MdPauseCircleOutline, MdPlayCircleOutline } from "react-icons/md";
+import { MdOutlineStopCircle, MdPlayCircleOutline } from "react-icons/md";
 
 // style
 import { Container } from "./loading-style";
 
-const Loading = ({ loading }) => {
-  const [isLoading, setIsLoading] = React.useState(loading);
+const Loading = ({ progress }) => {
+  const [isLoading, setIsLoading] = React.useState(false);
+  const handleClick = () => {
+    setIsLoading(!isLoading)
+  };
 
   return (
     <Container>
@@ -22,9 +25,9 @@ const Loading = ({ loading }) => {
 
       <div className="loading-progress">
         <progress className="progress" value="70" max="100"></progress>
-        <button onClick={() => setIsLoading(!isLoading)}>
+        <button onClick={handleClick}>
           {isLoading ? (
-            <MdPauseCircleOutline size={50} color="#4E4E4E" />
+            <MdOutlineStopCircle size={50} color="#4E4E4E" />
           ) : (
             <MdPlayCircleOutline size={50} color="#4E4E4E" />
           )}

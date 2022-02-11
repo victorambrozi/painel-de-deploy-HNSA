@@ -1,15 +1,30 @@
 import React from "react";
 
-import { Container, UploadMessage } from "./drag-and-drop-style";
-
 import { useDropzone } from "react-dropzone";
+import filesize from "filesize";
 import FileList from "../FileList/FileList";
-
-import { MdOutlineFileUpload } from "react-icons/md";
 import Loading from "../Loading/Loading";
 
+// assets
+import { MdOutlineFileUpload } from "react-icons/md";
+
+//style
+import { Container, UploadMessage } from "./drag-and-drop-style";
+
 const DragAndDrop = () => {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [dataFile, setDataFile] = React.useState();
+  const reader = new FileReader();
+
+  const onDrop = React.useCallback((acceptedFiles) => {
+    setDataFile(() => acceptedFiles.map((file) => ({
+      sucess: false,
+      error: false,
+      progress: 0,
+      size: filesize(file.size),
+      name: file.name,
+      file,
+    })));
+  });
 
   const {
     acceptedFiles,
@@ -19,17 +34,10 @@ const DragAndDrop = () => {
     isDragReject,
   } = useDropzone({
     accept: "image/png, image/jpeg",
+    onDrop,
   });
 
-  React.useEffect(() => {
-    // adicionar no LocalStorage
-    // setUploadedFiles(...acceptedFiles);
-  }, []);
-
-  console.log(acceptedFiles);
   const renderUploadMessage = (isDragAccept, isDragReject) => {
-    console.log(`accept: ${isDragAccept} / `, `reject: ${isDragReject}`);
-
     if (isDragAccept) {
       return (
         <UploadMessage>
@@ -69,8 +77,8 @@ const DragAndDrop = () => {
           <div>{renderUploadMessage(isDragAccept, isDragReject)}</div>
         </div>
       </Container>
-      <Loading loading={isLoading} />
-      {acceptedFiles.length && <FileList files={acceptedFiles} />}
+      {!dataFile?.sucess && !dataFile?.error && <Loading loading={dataFile} />}
+      {!!acceptedFiles.length && <FileList files={dataFile} />}
     </>
   );
 };
