@@ -16,7 +16,7 @@ const DragAndDrop = () => {
   const reader = new FileReader();
 
   const onDrop = React.useCallback((acceptedFiles) => {
-    setDataFile(() =>
+    return setDataFile(() =>
       acceptedFiles.map((file) => ({
         success: true,
         error: false,
@@ -79,7 +79,8 @@ const DragAndDrop = () => {
           <div>{renderUploadMessage(isDragAccept, isDragReject)}</div>
         </div>
       </Container>
-      {!dataFile?.success && !dataFile?.error && <Loading loading={dataFile} />}
+      {<p>{console.log(dataFile)}</p>}
+      {/* {!dataFile?.success && !dataFile?.error && <Loading loading={dataFile} /> } */}
       {!!acceptedFiles.length && <FileList files={dataFile} />}
     </>
   );

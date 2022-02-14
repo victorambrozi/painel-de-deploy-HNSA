@@ -6,7 +6,7 @@ import Progress from "react-progressbar";
 import { Container } from "./loading-style";
 
 const Loading = ({ progress }) => {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(progress);
   const handleClick = () => {
     setIsLoading(!isLoading);
   };
