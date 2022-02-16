@@ -128,8 +128,6 @@ const StyleForm = styled.form`
 
     background: #ffe0de;
 
-    display: none; // acionar com JS
-
     > span {
       margin-left: 2rem;
 

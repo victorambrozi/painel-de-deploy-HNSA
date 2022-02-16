@@ -3,10 +3,11 @@ import Login from "./pages/Login/Login";
 import PainelDeDeploys from "./pages/PainelDeDeploys/PainelDeDeploys";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GeneralContext from "./context/GeneralContext.jsx";
 
 function App() {
   return (
-    <>
+    <GeneralContext>
       <Router>
         <GlobalStyle />
         <Routes>
@@ -14,7 +15,7 @@ function App() {
           <Route path="/" element={<Login />} />
         </Routes>
       </Router>
-    </>
+    </GeneralContext>
   );
 }
 

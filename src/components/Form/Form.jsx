@@ -1,20 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
-import { StyleForm, StyleTitleForm, StyleLogo, Container } from "./form-style";
-import { MdOutlineErrorOutline } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import * as Custom from "../../context/customHook/customHooks";
+import MessageError from "./MessageError/MessageError";
 
+import { StyleForm, StyleTitleForm, StyleLogo, Container } from "./form-style";
 import logo from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
 
 const Form = (props) => {
-  const [form, setForm] = React.useState({
-    name: "",
-    password: "",
-  });
+  const [name, setName] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState(null);
+
+  const authenticator = Custom.useAtuh();
+
+  let navigate = useNavigate();
+
+  const dataForm = {
+    name,
+    password,
+  };
+
+  const handleCheckBox = ({ target }) => {
+    const { checked } = target;
+
+    if (checked) {
+      saveData(dataForm);
+    } else {
+      localStorage.removeItem("form");
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (name && password) {
+      authenticator.signin(dataForm, () => {
+        setError(false);
+        console.log("logado");
+
+        navigate("/deploys");
+      });
+    } else if (!name || !password) {
+      setError(true);
+    }
   };
+
+  function saveData(dataForm) {
+    localStorage.setItem("form", JSON.stringify(dataForm));
+  }
 
   return (
     <>
@@ -34,8 +68,8 @@ const Form = (props) => {
           <input
             type="text"
             id="name"
-            value={form.name}
-            onChange={(event) => setForm(event.target.value)}
+            value={name}
+            onChange={({ target }) => setName(target.value)}
             className="bg-icon"
           />
           <label htmlFor="password" className="label-name">
@@ -44,24 +78,26 @@ const Form = (props) => {
           <input
             type="password"
             name="password"
+            value={password}
             id="password"
             className="bg-icon"
+            onChange={({ target }) => setPassword(target.value)}
           />
 
           <label className="data-remember" htmlFor="data-remember">
-            <input type="checkbox" name="data-remember" id="data-remember" />
+            <input
+              type="checkbox"
+              name="data-remember"
+              id="data-remember"
+              onClick={handleCheckBox}
+            />
             <span></span>
             Lembrar meus dados
           </label>
 
-          <div className="login-error">
-            <MdOutlineErrorOutline size={15} color="#BB7772" />
-            <span>Senha ou nome de usuário incorretos</span>
-          </div>
+          {error ? <MessageError /> : null}
 
-          <Link to="/deploys">
-            <Button text="Login" />
-          </Link>
+          <Button text="Login" type="submit" handleSubmit={handleSubmit} />
 
           <div className="forget-password">
             <p>
