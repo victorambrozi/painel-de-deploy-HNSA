@@ -4,6 +4,7 @@ import { StyleForm, StyleTitleForm, StyleLogo, Container } from "./form-style";
 import { MdOutlineErrorOutline } from "react-icons/md";
 
 import logo from "../../assets/logo.svg";
+import { Link } from "react-router-dom";
 
 const Form = (props) => {
   const [form, setForm] = React.useState({
@@ -58,7 +59,9 @@ const Form = (props) => {
             <span>Senha ou nome de usuário incorretos</span>
           </div>
 
-          <Button text="Login" />
+          <Link to="/deploys">
+            <Button text="Login" />
+          </Link>
 
           <div className="forget-password">
             <p>

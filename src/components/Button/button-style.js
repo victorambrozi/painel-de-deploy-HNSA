@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ButtonComponent = styled.button`
+const ButtonComponent = styled.a`
   margin: 2rem 0 3rem 0;
   padding: 1.5rem;
   background: #3454CF;
