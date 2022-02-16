@@ -79,7 +79,6 @@ const DragAndDrop = () => {
           <div>{renderUploadMessage(isDragAccept, isDragReject)}</div>
         </div>
       </Container>
-      {<p>{console.log(dataFile)}</p>}
       {/* {!dataFile?.success && !dataFile?.error && <Loading loading={dataFile} /> } */}
       {!!acceptedFiles.length && <FileList files={dataFile} />}
     </>
