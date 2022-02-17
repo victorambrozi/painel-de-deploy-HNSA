@@ -27,7 +27,7 @@ const StyleLogo = styled.div`
 `;
 
 const StyleTitleForm = styled.h2`
-  margin: 15.7rem 0 4rem 0;
+  margin: 12rem 0 4rem 0;
   font-size: 2rem;
   font-weight: 700;
 `;

@@ -27,6 +27,26 @@ const Form = (props) => {
     stateChecked,
   };
 
+  React.useEffect(() => {
+    const dataStorage = JSON.parse(localStorage.getItem("data"));
+
+    //tranforma em objeto
+    const dataLog = dataStorage?.reduce((acc, login) => {
+      return {
+        user: login.name,
+        checked: login.stateChecked,
+      };
+    }, {});
+
+    if (dataLog?.checked) {
+      const checkedbox = document.getElementById("data-remember");
+
+      setName(dataLog.user);
+      setStateChecked(true);
+      checkedbox.click();
+    }
+  }, []);
+
   function saveData(prop, dataForm) {
     localStorage.setItem(
       `${prop.toString()}`,
@@ -45,7 +65,6 @@ const Form = (props) => {
         saveData("data", dataStorage);
       }
     }
-    console.log(target.checked);
   };
 
   const handleSubmit = (event) => {
