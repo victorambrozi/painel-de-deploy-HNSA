@@ -11,6 +11,7 @@ const Form = (props) => {
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState(null);
+  const [stateChecked, setStateChecked] = React.useState(false);
 
   const authenticator = Custom.useAtuh();
 
@@ -21,20 +22,39 @@ const Form = (props) => {
     password,
   };
 
-  const handleCheckBox = ({ target }) => {
-    const { checked } = target;
+  const dataStorage = {
+    name,
+    stateChecked,
+  };
 
-    if (checked) {
-      saveData(dataForm);
+  function saveData(prop, dataForm) {
+    localStorage.setItem(
+      `${prop.toString()}`,
+      JSON.stringify([{ ...dataForm }])
+    );
+  }
+
+  const handleCheckBox = ({ target }) => {
+    setStateChecked(target.checked);
+
+    if (!target.checked) {
+      localStorage.removeItem("data");
     } else {
-      localStorage.removeItem("form");
+      if (name !== "") {
+        //salvar dados no localStorage
+        saveData("data", dataStorage);
+      }
     }
+    console.log(target.checked);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (name && password) {
+      //salvar no storage
+      saveData("data", dataStorage);
+
       authenticator.signin(dataForm, () => {
         setError(false);
         console.log("logado");
@@ -45,10 +65,6 @@ const Form = (props) => {
       setError(true);
     }
   };
-
-  function saveData(dataForm) {
-    localStorage.setItem("form", JSON.stringify(dataForm));
-  }
 
   return (
     <>
