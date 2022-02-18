@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineErrorOutline } from "react-icons/md";
-import {AuthContext} from "../GeneralContext"
+import { AuthContext } from "../GeneralContext";
 
 const useAtuh = () => React.useContext(AuthContext);
 

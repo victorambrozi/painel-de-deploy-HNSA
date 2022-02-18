@@ -9,6 +9,8 @@ import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
 import { StylePainel, Container } from "./painelDeDeploy-style.js";
 
 const PainelDeDeploys = () => {
+
+
   return (
       <Container>
         <Header />

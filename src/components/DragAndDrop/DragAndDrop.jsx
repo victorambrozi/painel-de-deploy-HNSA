@@ -13,21 +13,42 @@ import { Container, UploadMessage } from "./drag-and-drop-style";
 
 const DragAndDrop = () => {
   const [dataFile, setDataFile] = React.useState();
-  const reader = new FileReader();
+  const [infoDeploy, setInfoDeploy] = React.useState([]);
 
+  const reader = new FileReader();
+  
   const onDrop = React.useCallback((acceptedFiles) => {
     return setDataFile(() =>
-      acceptedFiles.map((file) => ({
-        success: true,
-        error: false,
-        progress: 0,
-        size: filesize(file.size),
-        name: file.name,
-        file,
-      }))
+    acceptedFiles.map((file) => {
+      const date = new Date();
+
+      const dataDeploy = {
+        count: acceptedFiles.length,
+          date: {
+            day: String(date.getDate()).padStart(2, '0'),
+            month: date.getMonth() + 1,
+            hour: date.getHours(),
+            minutes: date.getMinutes(), 
+          },
+        };
+        setInfoDeploy(dataDeploy);
+        
+        // salvar dados do localStorage
+        localStorage.setItem('infoDeploy', JSON.stringify(dataDeploy));
+
+        return {
+          success: true,
+          error: false,
+          progress: 0,
+          size: filesize(file.size),
+          name: file.name,
+          file,
+        };
+      })
     );
   }, []);
 
+  console.log(infoDeploy)
   const {
     acceptedFiles,
     getRootProps,
@@ -84,5 +105,6 @@ const DragAndDrop = () => {
     </>
   );
 };
+
 
 export default DragAndDrop;

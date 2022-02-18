@@ -8,13 +8,13 @@ import GeneralContext from "./context/GeneralContext.jsx";
 function App() {
   return (
     <GeneralContext>
-      <Router>
-        <GlobalStyle />
-        <Routes>
-          <Route path="/deploys" element={<PainelDeDeploys />} />
-          <Route path="/" element={<Login />} />
-        </Routes>
-      </Router>
+        <Router>
+          <GlobalStyle />
+          <Routes>
+            <Route path="/deploys" element={<PainelDeDeploys />} />
+            <Route path="/" element={<Login />} />
+          </Routes>
+        </Router>
     </GeneralContext>
   );
 }

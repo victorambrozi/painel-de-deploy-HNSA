@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
-import * as Custom from "../../context/customHook/customHooks";
+import { useAtuh } from "../../context/customHook/customHooks";
 import MessageError from "./MessageError/MessageError";
 
 import { StyleForm, StyleTitleForm, StyleLogo, Container } from "./form-style";
@@ -13,7 +13,7 @@ const Form = (props) => {
   const [error, setError] = React.useState(null);
   const [stateChecked, setStateChecked] = React.useState(false);
 
-  const authenticator = Custom.useAtuh();
+  const authenticator = useAtuh();
 
   let navigate = useNavigate();
 

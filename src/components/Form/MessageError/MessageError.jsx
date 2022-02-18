@@ -1,7 +1,7 @@
-import * as Custom from "../../../context/customHook/customHooks";
+import {useStatus} from "../../../context/customHook/customHooks";
 
 const MessageError = () => {
-  const message = Custom.useStatus();
+  const message = useStatus();
   return (
     <div>{message}</div>
   )
